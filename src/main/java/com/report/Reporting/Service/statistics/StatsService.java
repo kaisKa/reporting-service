@@ -1,7 +1,9 @@
 package com.report.Reporting.Service.statistics;
 
 import com.report.Reporting.Service.event.Event;
+import com.report.Reporting.Service.exceptions.NotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,6 +40,17 @@ public class StatsService {
 
     public List<Stats> getWeeklyTrends(String week) {
         return repository.findByWeeklySubmissionCountsContainingKey(week);
+    }
+
+    public Stats getMostFrequentService() {
+        PageRequest pageRequest = PageRequest.of(0, 1); // Fetch the first record
+        List<Stats> topServices = repository.findTopServiceBySubmissionCount(pageRequest);
+
+        if (topServices.isEmpty()) {
+            throw new NotFoundException("No Data");
+        }
+
+        return topServices.get(0);
     }
 
 

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f542704b-0405-4b01-b0c6-483317811ece",
+		"_postman_id": "bbdd4edd-e6d7-45f6-87b1-cab0021e0a50",
 		"name": "Reporting Service",
 		"description": "API Documentation For Reporting Service Endpoints",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -44,7 +44,7 @@
 								{
 									"key": "week",
 									"value": "<string>",
-									"description": "(Required) "
+									"description": "(Required) week format 'e.i 2025-W2'"
 								}
 							]
 						},
@@ -94,7 +94,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"eu70f\": \"<integer>\",\n      \"et_f\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"dolore_fdb\": \"<integer>\"\n    }\n  },\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"reprehenderit_cd\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"enimc2\": \"<integer>\",\n      \"in_f\": \"<integer>\",\n      \"adipisicing_17\": \"<integer>\"\n    }\n  }\n]"
+							"body": "{\n  \"status\": \"<string>\",\n  \"message\": \"<string>\",\n  \"data\": \"<object>\"\n}"
 						}
 					]
 				},
@@ -182,7 +182,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"eu70f\": \"<integer>\",\n      \"et_f\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"dolore_fdb\": \"<integer>\"\n    }\n  },\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"reprehenderit_cd\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"enimc2\": \"<integer>\",\n      \"in_f\": \"<integer>\",\n      \"adipisicing_17\": \"<integer>\"\n    }\n  }\n]"
+							"body": "{\n  \"status\": \"<string>\",\n  \"message\": \"<string>\",\n  \"data\": \"<object>\"\n}"
 						}
 					]
 				},
@@ -270,7 +270,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"eu70f\": \"<integer>\",\n      \"et_f\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"dolore_fdb\": \"<integer>\"\n    }\n  },\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"reprehenderit_cd\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"enimc2\": \"<integer>\",\n      \"in_f\": \"<integer>\",\n      \"adipisicing_17\": \"<integer>\"\n    }\n  }\n]"
+							"body": "{\n  \"status\": \"<string>\",\n  \"message\": \"<string>\",\n  \"data\": \"<object>\"\n}"
 						}
 					]
 				},
@@ -308,7 +308,7 @@
 								{
 									"key": "date",
 									"value": "<string>",
-									"description": "(Required) data format 'e.i 2025-01-19'"
+									"description": "(Required) date format 'e.i 2025-01-19'"
 								}
 							]
 						},
@@ -358,7 +358,86 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"eu70f\": \"<integer>\",\n      \"et_f\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"dolore_fdb\": \"<integer>\"\n    }\n  },\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"reprehenderit_cd\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"enimc2\": \"<integer>\",\n      \"in_f\": \"<integer>\",\n      \"adipisicing_17\": \"<integer>\"\n    }\n  }\n]"
+							"body": "{\n  \"status\": \"<string>\",\n  \"message\": \"<string>\",\n  \"data\": \"<object>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get Most Frequent Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/report/api/stats/most-frequent-service",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"api",
+								"stats",
+								"most-frequent-service"
+							]
+						},
+						"description": "Endpoint to get most frequently used service"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/report/api/stats/most-frequent-service",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"report",
+										"api",
+										"stats",
+										"most-frequent-service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<string>\",\n  \"message\": \"<string>\",\n  \"data\": \"<object>\"\n}"
 						}
 					]
 				}

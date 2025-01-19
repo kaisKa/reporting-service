@@ -1,6 +1,7 @@
 package com.report.Reporting.Service.statistics;
 
 import com.report.Reporting.Service.event.Event;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -25,4 +26,7 @@ public interface StatsRepository extends MongoRepository<Stats, BigInteger> {
     // Custom query for weekly submission counts
     @Query("{'weeklySubmissionCounts.?0': {$exists: true}}")
     List<Stats> findByWeeklySubmissionCountsContainingKey(String week);
+
+    @Query("{}") // Find all documents
+    List<Stats> findTopServiceBySubmissionCount(PageRequest pageRequest);
 }
