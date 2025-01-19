@@ -95,9 +95,7 @@ http://localhost:9999/swagger-ui.html
 - **Spring Boot**
 - **Spring Security**
 - **MongoDB Driver**
-- **PostgreSQL Driver**
 - **Spring Kafka**
-- **Swagger/OpenAPI**
 - **Docker Compose**
 
 ## License
