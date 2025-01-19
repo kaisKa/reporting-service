@@ -1,18 +1,18 @@
 package com.report.Reporting.Service.statistics;
 
 import com.report.Reporting.Service.event.Event;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class StatsService {
 
     private final StatsRepository repository;
 
-    public StatsService(StatsRepository repository) {
-        this.repository = repository;
-    }
+
 
     public Stats save(Stats stats){
         return repository.save(stats);

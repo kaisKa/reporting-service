@@ -3,6 +3,7 @@ package com.report.Reporting.Service.reporting;
 import com.report.Reporting.Service.statistics.Stats;
 import com.report.Reporting.Service.statistics.StatsService;
 import io.swagger.v3.oas.annotations.Parameter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,13 +13,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/report")
+@RequiredArgsConstructor
 public class ReportController {
 
     private final StatsService service;
-
-    public ReportController(StatsService service) {
-        this.service = service;
-    }
 
     @GetMapping("/total-submissions")
     public List<Stats> getTotalSubmissionsPerService(@RequestParam Long serviceId) {
