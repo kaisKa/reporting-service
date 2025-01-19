@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "f542704b-0405-4b01-b0c6-483317811ece",
+		"name": "Reporting Service",
+		"description": "API Documentation For Reporting Service Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6197235"
+	},
+	"item": [
+		{
+			"name": "api/report",
+			"item": [
+				{
+					"name": "get Weekly Trends",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/report/weekly-trends?week=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"weekly-trends"
+							],
+							"query": [
+								{
+									"key": "week",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Endpoint to get weekly stats"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/report/weekly-trends?week=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"report",
+										"weekly-trends"
+									],
+									"query": [
+										{
+											"key": "week",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"eu70f\": \"<integer>\",\n      \"et_f\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"dolore_fdb\": \"<integer>\"\n    }\n  },\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"reprehenderit_cd\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"enimc2\": \"<integer>\",\n      \"in_f\": \"<integer>\",\n      \"adipisicing_17\": \"<integer>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "get Total Submissions Per Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/report/total-submissions?serviceId=<long>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"total-submissions"
+							],
+							"query": [
+								{
+									"key": "serviceId",
+									"value": "<long>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Endpoint to get total submission by service "
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/report/total-submissions?serviceId=<long>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"report",
+										"total-submissions"
+									],
+									"query": [
+										{
+											"key": "serviceId",
+											"value": "<long>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"eu70f\": \"<integer>\",\n      \"et_f\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"dolore_fdb\": \"<integer>\"\n    }\n  },\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"reprehenderit_cd\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"enimc2\": \"<integer>\",\n      \"in_f\": \"<integer>\",\n      \"adipisicing_17\": \"<integer>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "get Stats By Submission Count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/report/stats-by-submission-count?submissionCount=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"stats-by-submission-count"
+							],
+							"query": [
+								{
+									"key": "submissionCount",
+									"value": "<integer>",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Endpoint to get stats by submission count"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/report/stats-by-submission-count?submissionCount=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"report",
+										"stats-by-submission-count"
+									],
+									"query": [
+										{
+											"key": "submissionCount",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"eu70f\": \"<integer>\",\n      \"et_f\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"dolore_fdb\": \"<integer>\"\n    }\n  },\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"reprehenderit_cd\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"enimc2\": \"<integer>\",\n      \"in_f\": \"<integer>\",\n      \"adipisicing_17\": \"<integer>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "get Daily Trends",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/report/daily-trends?date=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"report",
+								"daily-trends"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "<string>",
+									"description": "(Required) data format 'e.i 2025-01-19'"
+								}
+							]
+						},
+						"description": "Endpoint to get daily stats"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/report/daily-trends?date=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"report",
+										"daily-trends"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"eu70f\": \"<integer>\",\n      \"et_f\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"dolore_fdb\": \"<integer>\"\n    }\n  },\n  {\n    \"get_id\": \"<integer>\",\n    \"serviceId\": \"<long>\",\n    \"submissionCount\": \"<integer>\",\n    \"lastSubmissionTimestamp\": \"<dateTime>\",\n    \"dailySubmissionCounts\": {\n      \"reprehenderit_cd\": \"<integer>\"\n    },\n    \"weeklySubmissionCounts\": {\n      \"enimc2\": \"<integer>\",\n      \"in_f\": \"<integer>\",\n      \"adipisicing_17\": \"<integer>\"\n    }\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:9999",
+			"type": "string"
+		}
+	]
+}
