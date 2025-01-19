@@ -1,0 +1,10 @@
+server:
+  port: 9999
+spring:
+  application.name: Reporting-Service
+  # mongo config
+  data:
+    mongodb:
+      uri: mongodb://admin:password@localhost:27017/subdb?authSource=admin
+  kafka:
+    bootstrap-servers: localhost:9092
